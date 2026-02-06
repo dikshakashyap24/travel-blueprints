@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochi | Art, History & Heritage</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 
+                        sans: ['Outfit', 'sans-serif'], 
+                        serif: ['Playfair Display', 'serif'] 
+                    },
+                    colors: { 
+                        'brand-teal': '#2A9D8F',
+                        'brand-gold': '#D4A373',
+                        'brand-dark': '#1a1a1a',
+                        'brand-terra': '#E76F51'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-brand-dark selection:bg-brand-terra selection:text-white">
+
+    <div class="relative h-[60vh] w-full rounded-b-[3rem] overflow-hidden shadow-2xl">
+        <img src="assets\css\kochi.jpg" class="w-full h-full object-cover animate-[float_20s_ease-in-out_infinite]">
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-4 fade-in-up">
+            <span class="text-brand-gold uppercase tracking-[0.3em] text-sm font-semibold mb-4">March 7-8</span>
+            <h1 class="text-6xl md:text-8xl font-serif font-medium mb-4 drop-shadow-lg">Fort Kochi</h1>
+            <p class="text-xl font-light tracking-wide opacity-90">Where History Meets Art</p>
+        </div>
+
+        <a href="kerala.html" class="absolute top-8 left-8 bg-white/10 hover:bg-white/30 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full text-white text-sm transition group z-50">
+            <i class="fa-solid fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i> Back to Kerala
+        </a>
+    </div>
+
+    <div class="sticky top-0 z-40 bg-white/90 backdrop-blur-lg border-b border-gray-100 shadow-sm overflow-x-auto">
+        <div class="max-w-6xl mx-auto flex justify-center space-x-8 px-6 min-w-max py-4">
+            <button onclick="openTab('itinerary', this)" class="tab-btn active-tab text-sm font-bold uppercase tracking-wider text-brand-terra border-b-2 border-brand-terra pb-1 transition-all">Itinerary</button>
+            <button onclick="openTab('food', this)" class="tab-btn text-sm font-medium uppercase tracking-wider text-gray-400 hover:text-brand-dark border-b-2 border-transparent pb-1 transition-all">Art Cafes</button>
+            <button onclick="openTab('activities', this)" class="tab-btn text-sm font-medium uppercase tracking-wider text-gray-400 hover:text-brand-dark border-b-2 border-transparent pb-1 transition-all">Biennale & Heritage</button>
+            <button onclick="openTab('budget', this)" class="tab-btn text-sm font-medium uppercase tracking-wider text-gray-400 hover:text-brand-dark border-b-2 border-transparent pb-1 transition-all">Budget</button>
+        </div>
+    </div>
+
+    <main class="max-w-5xl mx-auto px-6 py-16 min-h-screen">
+
+        <div id="itinerary" class="tab-content block animate-fade-in">
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-16">
+                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100">
+                    <h3 class="font-serif text-2xl mb-6 text-brand-dark"><i class="fa-solid fa-train text-brand-terra mr-3"></i> Arrival</h3>
+                    <div class="space-y-4 text-sm text-gray-600">
+                        <div class="flex justify-between border-b border-gray-200 pb-2"><span>Train</span> <span class="font-bold text-brand-dark">16346 Nethravathi Exp</span></div>
+                        <div class="flex justify-between border-b border-gray-200 pb-2"><span>Route</span> <span>Alleppey → Ernakulam Jn</span></div>
+                        <div class="flex justify-between"><span>Time</span> <span class="text-brand-terra font-bold">11:55 AM - 1:10 PM</span></div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100">
+                    <h3 class="font-serif text-2xl mb-6 text-brand-dark"><i class="fa-solid fa-hotel text-brand-terra mr-3"></i> The Stay</h3>
+                    <div class="space-y-4 text-sm text-gray-600">
+                        <div class="flex justify-between border-b border-gray-200 pb-2"><span>Hotel</span> <span class="font-bold text-brand-dark">Hotel Arches</span></div>
+                        <div class="flex justify-between border-b border-gray-200 pb-2"><span>Location</span> <span>Rose Street</span></div>
+                        <div class="flex justify-between"><span>Vibe</span> <span class="italic text-gray-500">Colonial Charm</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-3xl mb-8 pl-4">Day 1: Saturday, March 7</h3>
+            <div class="relative border-l-2 border-dashed border-brand-terra/30 ml-6 space-y-16 pb-4">
+                
+                <div class="relative pl-10">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-terra ring-4 ring-white"></div>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">01:45 PM</span>
+                    <h4 class="text-xl font-bold mt-1">Lunch @ Kashi Art Café</h4>
+                    <p class="text-gray-500 mt-2">The "OG" art café. Famous for its vertical garden and Chocolate Cake.</p>
+                </div>
+
+                <div class="relative pl-10">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white border-4 border-brand-terra"></div>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">03:00 PM</span>
+                    <h4 class="text-xl font-bold mt-1">Aspinwall House (Biennale)</h4>
+                    <p class="text-gray-500 mt-2">The main venue. Spend 2-3 hours here. Modern art set against crumbling colonial walls.</p>
+                </div>
+
+                <div class="relative pl-10">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-gold ring-4 ring-white"></div>
+                    <span class="text-xs font-bold text-brand-gold uppercase tracking-widest">05:30 PM</span>
+                    <h4 class="text-xl font-bold mt-1">Sunset @ Seagull</h4>
+                    <p class="text-gray-500 mt-2">Grab a beer on the water's edge. Watch ships pass by. Order Beef Dry Fry.</p>
+                </div>
+
+                <div class="relative pl-10">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-dark ring-4 ring-white"></div>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">08:00 PM</span>
+                    <h4 class="text-xl font-bold mt-1">Dinner @ Fort House Hotel</h4>
+                    <p class="text-gray-500 mt-2">Atmospheric waterfront dining. Try Kerala Prawn Curry with Appam.</p>
+                </div>
+
+            </div>
+
+            <h3 class="font-serif text-3xl mb-8 pl-4 mt-16">Day 2: Sunday, March 8</h3>
+            <div class="relative border-l-2 border-dashed border-gray-300 ml-6 space-y-16 pb-4">
+                 <div class="relative pl-10">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gray-400 ring-4 ring-white"></div>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">09:30 AM</span>
+                    <h4 class="text-xl font-bold mt-1">Jew Town & Synagogue</h4>
+                    <p class="text-gray-500 mt-2">Take an auto to Mattancherry. Visit the 450-year-old Paradesi Synagogue (Opens 10 AM, Closed Saturdays).</p>
+                </div>
+                <div class="relative pl-10">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gray-400 ring-4 ring-white"></div>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">12:30 PM</span>
+                    <h4 class="text-xl font-bold mt-1">Lunch @ Ginger House</h4>
+                    <p class="text-gray-500 mt-2">Located behind a massive antique warehouse. Hidden waterfront views.</p>
+                </div>
+                <div class="relative pl-10">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gray-400 ring-4 ring-white"></div>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">04:30 PM</span>
+                    <h4 class="text-xl font-bold mt-1">Vypeen Ferry Ride</h4>
+                    <p class="text-gray-500 mt-2">Take the public ferry (₹6) for the best harbor views at golden hour.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="food" class="tab-content hidden animate-fade-in">
+            <div class="mb-12">
+                <h3 class="font-serif text-3xl mb-6">Art Cafes & Seafood</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100 group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://magicpin.in/Kochi/Fort/Restaurant/Kashi-Art-Cafe/store/31677a/menu/" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-gray-800">Must Visit</div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-serif text-xl font-bold mb-1">Kashi Art Café</h4>
+                            <p class="text-xs text-gray-500 mb-4 uppercase tracking-wide">The Institution</p>
+                            <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
+                                <p class="text-xs font-bold text-stone-900 uppercase mb-2">Order This</p>
+                                <ul class="text-sm space-y-1 text-gray-700">
+                                    <li>🍫 <strong>Chocolate Cake</strong> (Non-negotiable)</li>
+                                    <li>🥪 <strong>Chicken Sandwich</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100 group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/45/37/6a/ginger-house-museum-hotel.jpg?w=1200&h=-1&s=1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-gray-800">Mattancherry</div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-serif text-xl font-bold mb-1">Ginger House</h4>
+                            <p class="text-xs text-gray-500 mb-4 uppercase tracking-wide">Museum Hotel</p>
+                            <p class="text-sm text-gray-600">You walk through a shop of giant sculptures to reach this hidden waterfront deck. Great for a lime soda break.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100 group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/07/0d/2a/oceanos-restaurant.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-gray-800">Local Legend</div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-serif text-xl font-bold mb-1">Oceanos</h4>
+                            <p class="text-xs text-gray-500 mb-4 uppercase tracking-wide">Elphinstone Road</p>
+                            <div class="bg-orange-50 p-4 rounded-xl border border-orange-100">
+                                <p class="text-xs font-bold text-orange-900 uppercase mb-2">Seafood Lovers</p>
+                                <p class="text-sm text-gray-700">Small and unassuming but loved by locals. Try the <strong>Fish Mango Curry</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100 group">
+                        <div class="p-6">
+                            <h4 class="font-serif text-xl font-bold mb-1">David Hall (Pandhal Café)</h4>
+                            <p class="text-xs text-gray-500 mb-4 uppercase tracking-wide">Dutch Bungalow</p>
+                            <p class="text-sm text-gray-600">A restored colonial bungalow with a garden. Famous for <strong>Thin-crust Pizza</strong> and Iced Coffee.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="activities" class="tab-content hidden animate-fade-in">
+            
+            <div class="bg-brand-terra text-white p-10 rounded-[2.5rem] relative text-center shadow-xl mb-12">
+                <div class="absolute top-6 right-6 bg-white text-brand-terra text-xs px-3 py-1 rounded-full font-bold">Main Event</div>
+                <h3 class="font-serif text-4xl mb-4">Kochi-Muziris Biennale</h3>
+                <p class="text-white/90 max-w-2xl mx-auto mb-8 text-lg font-light">
+                    "It's not just art on walls. It's art in old warehouses, spice go-downs, and colonial bungalows."
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="bg-white/20 backdrop-blur px-6 py-3 rounded-xl border border-white/30">
+                        <p class="text-sm font-bold">Aspinwall House</p>
+                        <p class="text-xs opacity-70">Main Venue</p>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur px-6 py-3 rounded-xl border border-white/30">
+                        <p class="text-sm font-bold">Pepper House</p>
+                        <p class="text-xs opacity-70">Library & Cafe</p>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur px-6 py-3 rounded-xl border border-white/30">
+                        <p class="text-sm font-bold">David Hall</p>
+                        <p class="text-xs opacity-70">Garden Gallery</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-[2.5rem] border border-gray-200 p-8">
+                    <h4 class="font-serif text-2xl mb-2">Paradesi Synagogue</h4>
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Jew Town, Mattancherry</p>
+                    <p class="text-gray-600 mb-4">
+                        Built in 1568. Famous for its hand-painted blue willow tiles from China and Belgian glass chandeliers.
+                    </p>
+                    <div class="bg-gray-100 p-3 rounded-lg text-sm">
+                        <span class="font-bold block text-gray-700">⚠️ Timing Alert</span>
+                        Closed on Fridays & Saturdays. Open Sunday 10 AM - 5 PM.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2.5rem] border border-gray-200 p-8">
+                    <h4 class="font-serif text-2xl mb-2">Dhobi Khana</h4>
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Cultural Heritage</p>
+                    <p class="text-gray-600 mb-4">
+                        Visit the traditional laundry ghats run by the Vannan community. It offers a raw, unfiltered look at daily life in Fort Kochi.
+                    </p>
+                    <span class="inline-block bg-brand-terra/10 text-brand-terra px-3 py-1 rounded text-xs font-bold">Free Entry</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="budget" class="tab-content hidden animate-fade-in">
+            <div class="bg-white p-10 rounded-[2.5rem] shadow-2xl border border-gray-100 max-w-2xl mx-auto">
+                <h3 class="font-serif text-3xl mb-8 text-center text-brand-gold">Trip Calculator</h3>
+                
+                <div class="space-y-8">
+                    <div>
+                        <label class="flex justify-between text-sm font-bold text-gray-600 mb-4">
+                            <span>Hotel Arches (1 Night)</span>
+                            <span class="text-brand-teal">₹<span id="val-hotel">1400</span></span>
+                        </label>
+                        <input type="range" min="1000" max="6000" value="1400" step="100" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-brand-terra" oninput="updateBudget('hotel', this.value)">
+                    </div>
+
+                    <div>
+                        <label class="flex justify-between text-sm font-bold text-gray-600 mb-4">
+                            <span>Food & Cafes</span>
+                            <span class="text-brand-teal">₹<span id="val-food">3000</span></span>
+                        </label>
+                        <input type="range" min="1000" max="5000" value="3000" step="100" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-brand-terra" oninput="updateBudget('food', this.value)">
+                    </div>
+
+                    <div>
+                        <label class="flex justify-between text-sm font-bold text-gray-600 mb-4">
+                            <span>Tickets & Travel</span>
+                            <span class="text-brand-teal">₹<span id="val-transport">800</span></span>
+                        </label>
+                        <input type="range" min="500" max="3000" value="800" step="50" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-brand-terra" oninput="updateBudget('transport', this.value)">
+                    </div>
+
+                    <div class="pt-8 border-t border-dashed border-gray-200">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400 font-medium uppercase tracking-widest text-xs">Estimated Total</span>
+                            <span class="text-5xl font-serif font-bold text-brand-dark">₹<span id="total-budget">5200</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        function openTab(tabId, clickedBtn) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(c => {
+                c.classList.add('hidden');
+                c.classList.remove('block');
+            });
+
+            const target = document.getElementById(tabId);
+            if (target) {
+                target.classList.remove('hidden');
+                target.classList.add('block');
+            }
+
+            const btns = document.querySelectorAll('.tab-btn');
+            btns.forEach(btn => {
+                btn.classList.remove('active-tab', 'text-brand-terra', 'border-brand-terra', 'font-bold');
+                btn.classList.add('text-gray-400', 'border-transparent', 'font-medium');
+            });
+
+            if (clickedBtn) {
+                clickedBtn.classList.remove('text-gray-400', 'border-transparent', 'font-medium');
+                clickedBtn.classList.add('active-tab', 'text-brand-terra', 'border-brand-terra', 'font-bold');
+            }
+        }
+
+        // Budget Logic
+        let budgetValues = {
+            hotel: 1400,
+            food: 3000,
+            transport: 800
+        };
+
+        function updateBudget(category, value) {
+            budgetValues[category] = parseInt(value);
+            document.getElementById('val-' + category).innerText = value;
+            const total = budgetValues.hotel + budgetValues.food + budgetValues.transport;
+            document.getElementById('total-budget').innerText = total;
+        }
+    </script>
+
+</body>
+</html>

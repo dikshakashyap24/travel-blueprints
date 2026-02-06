@@ -1,81 +1,82 @@
-// This function handles switching between pages
+/* =========================================
+   1. NAVIGATION & ROUTING SYSTEM
+   ========================================= */
+
+// Generic function to hide all sections and show the target one
 function showSection(sectionId) {
-    // 1. Get all elements with the class 'section-view'
+    // 1. Get all elements marked as a 'section-view'
     const sections = document.querySelectorAll('.section-view');
     
-    // 2. Hide all of them
-    sections.forEach(section => {
-        section.classList.add('hidden');
+    // 2. Hide them all
+    sections.forEach(sec => {
+        sec.classList.add('hidden');
     });
-
-    // 3. Show only the one we clicked
-    const activeSection = document.getElementById(sectionId);
-    if (activeSection) {
-        activeSection.classList.remove('hidden');
-    }
     
-    // Scroll to top
-    window.scrollTo(0, 0);
-}
-
-// Special function for opening specific destination details
-function openDestination(placeName) {
-    // For now, we only have a placeholder for Varkala
-    // In the next step, we will create specific IDs for 'alleppey-detail' and 'kochi-detail'
-    
-    const detailId = placeName + '-detail'; // e.g., 'varkala-detail'
-    
-    // Check if that section exists in HTML
-    if (document.getElementById(detailId)) {
-        showSection(detailId);
+    // 3. Find and show the specific target
+    const target = document.getElementById(sectionId);
+    if (target) {
+        target.classList.remove('hidden');
+        // Scroll to top instantly for a "new page" feel
+        window.scrollTo({ top: 0, behavior: 'instant' });
     } else {
-        alert("Coming Soon! We are building " + placeName + " next.");
+        console.error(`Target section "${sectionId}" not found.`);
     }
 }
 
-/* --- TAB LOGIC --- */
-function openTab(tabName) {
-    // 1. Hide all tab contents
-    const contents = document.querySelectorAll('.tab-content');
-    contents.forEach(content => content.classList.add('hidden'));
-    contents.forEach(content => content.classList.remove('block')); // Tailwind fix
+// Helper to open specific sub-destinations (e.g., clicking 'Varkala' card)
+function openDestination(placeName) {
+    // Converts 'varkala' -> 'varkala-detail'
+    const detailId = placeName + '-detail';
+    showSection(detailId);
+}
 
-    // 2. Remove 'active' style from all buttons
-    const buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(btn => {
-        btn.classList.remove('text-brand-teal', 'border-brand-teal');
-        btn.classList.add('text-gray-500', 'border-transparent');
+/* =========================================
+   2. TAB SYSTEM (Plan / Food / Budget)
+   ========================================= */
+
+function openTab(tabId) {
+    // 1. Find the parent container of the clicked button
+    // This ensures we only switch tabs inside the current visible section
+    // (We use event.currentTarget to find the button that was clicked)
+    let context = document; 
+    
+    // OPTIONAL: If you want to limit search to the current active section, 
+    // but global search is usually fine for simple sites.
+    
+    // 2. Hide ALL tab contents globally (simplest approach)
+    const allContents = document.querySelectorAll('.tab-content');
+    allContents.forEach(content => {
+        content.classList.add('hidden');
+        content.classList.remove('block');
     });
 
-    // 3. Show the selected tab content
-    document.getElementById(tabName).classList.remove('hidden');
-    document.getElementById(tabName).classList.add('block');
+    // 3. Reset ALL tab buttons to "inactive" state
+    const allBtns = document.querySelectorAll('.tab-btn');
+    allBtns.forEach(btn => {
+        // Remove active teal branding
+        btn.classList.remove('active-tab', 'text-brand-teal', 'border-brand-teal');
+        // Add inactive gray style
+        btn.classList.add('text-gray-400', 'border-transparent');
+    });
 
-    // 4. Highlight the clicked button
-    // (We find the button by the onclick attribute because we didn't give them IDs)
-    // A simpler way: The button that called this function is passed as 'event.target'
-    event.currentTarget.classList.remove('text-gray-500', 'border-transparent');
-    event.currentTarget.classList.add('text-brand-teal', 'border-brand-teal');
+    // 4. Show the specific content requested
+    const targetContent = document.getElementById(tabId);
+    if (targetContent) {
+        targetContent.classList.remove('hidden');
+        targetContent.classList.add('block');
+    }
+
+    // 5. Highlight the button that was clicked
+    if (event && event.currentTarget) {
+        const btn = event.currentTarget;
+        btn.classList.remove('text-gray-400', 'border-transparent');
+        btn.classList.add('active-tab', 'text-brand-teal', 'border-brand-teal');
+    }
 }
 
-/* --- BUDGET CALCULATOR LOGIC --- */
-// We store current values in an object so we can sum them easily
-let budgetValues = {
-    hotel: 4000,
-    food: 3000,
-    transport: 1200
-};
-
-function updateBudget(category, value) {
-    // 1. Update the stored value
-    budgetValues[category] = parseInt(value);
-    
-    // 2. Update the number shown next to the slider
-    document.getElementById('val-' + category).innerText = value;
-    
-    // 3. Calculate Total
-    const total = budgetValues.hotel + budgetValues.food + budgetValues.transport;
-    
-    // 4. Update the Big Total
-    document.getElementById('total-budget').innerText = total;
-}
+/* =========================================
+   3. INITIALIZATION
+   ========================================= */
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Travel Blueprints: Core Systems Loaded.");
+});

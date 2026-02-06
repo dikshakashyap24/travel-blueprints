@@ -1,0 +1,62 @@
+/* =========================================
+   GLOBAL STYLES
+   ========================================= */
+html {
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+/* 1. Fade In Up (Entrance Animation) */
+.fade-in-up {
+    animation: fadeInUp 1.2s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Floating Background (Hero Image) */
+.float-animation {
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: scale(1.05) translateY(0); }
+    50% { transform: scale(1.1) translateY(-10px); }
+}
+
+/* 3. Bounce Arrow */
+.bounce-arrow {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* =========================================
+   UTILITIES
+   ========================================= */
+/* Custom Selection Color */
+::selection {
+    background: #D4A373; /* Brand Gold */
+    color: white;
+}
